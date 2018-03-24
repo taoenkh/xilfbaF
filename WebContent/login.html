@@ -1,0 +1,59 @@
+
+   
+  <!DOCTYPE html >
+  <html>
+  <head>
+    <title>Fablix</title>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <link rel="stylesheet" href="./css/style.css" type="text/css"  />
+    
+  </head>
+  <body>
+ 
+    <div id="shell" align="center">
+      <div id="header" align="left">
+        <h1 id="logo"><a href="/cs122b"></a></h1>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+      <!-- Login -->
+      <div id="login" align="center">
+        <br>
+        <br>
+        <h1 >Sign In</h1>
+        <br>
+        
+
+
+        <form id = "login_form" action="#" method="post">
+          
+            <label>Username </label> <input type="email" name="username" placeholder="Username" required autofocus/> <br />
+         
+          <br>
+          
+            <label>Password</label> <input type="password" name="password" placeholder="Password" required /> <br />
+         
+          <br>
+           
+            <input type="submit" value="Sign In" class="login-button">
+         <div class="g-recaptcha" data-sitekey="6Ld6OUcUAAAAANTQACQAzwmpeBVd2-LmCIyARfJU"></div>
+        </form>
+        <d id="login_error_message"></d>
+        <br>
+        <br>
+      </div>
+      
+      <br>
+     </div>
+    
+	
+	
+	<!-- include jQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- include our own JS file -->
+	<script src="./login.js"></script>
+   
+  </body>
+</html>

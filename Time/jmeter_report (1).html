@@ -1,0 +1,115 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background-color: linen;
+}
+
+td {
+    border-top-style: solid;
+}
+</style>
+</head>
+<body>
+
+<table style="width:100%">
+  <tr style="font-weight:bold; background-color: orange">
+    <td width="300px">Single-instance version cases</td>
+    <td>Graph Results Screenshot</td>
+    <td>Average Query Time(ms)</td>
+    <td>Average Search Servlet Time(ms)</td>
+    <td>Average JDBC Time(ms)</td>
+    <td>Analysis</td>
+  </tr>
+  <tr>
+    <td>Case 1: HTTP/1 thread</td>
+    <td><img src="graph_results_case1.png" alt="Graph Results Screenshot Case 1" style="width:304px;height:228px;"></td>
+    <td>165</td>
+    <td>13.09</td>
+    <td>13.004</td>
+    <td>Everything is on so taking least time</td>
+  </tr>
+  <tr>
+    <td>Case 2: HTTP/10 threads</td>
+    <td><img src="graph_results_case2.png" alt="Graph Results Screenshot Case 2" style="width:304px;height:228px;"></td>
+    <td>157</td>
+    <td>62.0</td>
+    <td>61.9</td>
+    <td>Since its 10thread the TJ and TJ are more consistent,which might be differen from 1 thread, since it had less queries to run</td>
+  </tr>
+  <tr>
+    <td>Case 3: HTTPS/10 threads</td>
+    <td><img src="graph_results_case3.png" alt="Graph Results Screenshot Case 3" style="width:304px;height:228px;"></td>
+    <td>166</td>
+    <td>60.3</td>
+    <td>60.2</td>
+    <td>HTTPS will affect average query time due to extra request, but others are not affected that much</td>
+  </tr>
+  <tr>
+    <td>Case 4: HTTP/10 threads/No prepared statements</td>
+    <td><img src="graph_results_case4.png" alt="Graph Results Screenshot Case 4" style="width:304px;height:228px;"></td>
+    <td>141</td>
+    <td>54.45</td>
+    <td>54.39</td>
+    <td>Prepare statement is beneficial for many queries, in our case search is only 1 query so its is not that useful</td>
+  </tr>
+  <tr>
+    <td>Case 5: HTTP/10 threads/No connection pooling</td>
+    <td><img src="graph_results_case5.png" alt="Graph Results Screenshot Case 5" style="width:304px;height:228px;"></td>
+    <td>161</td>
+    <td>70.39</td>
+    <td>66.54</td>
+    <td>As we can see pooling is affecting a lot. Without it each connection must establish new 
+	connection, but pooling will only establish once.</td>
+  </tr>
+
+</table> 
+
+
+<table style="width:100%">
+  <tr style="font-weight:bold; background-color: orange">
+    <td width="300px">Scaled version cases</td>
+    <td>Graph Results Screenshot</td>
+    <td>Average Query Time(ms)</td>
+    <td>Average Search Servlet Time(ms)</td>
+    <td>Average JDBC Time(ms)</td>
+    <td>Analysis</td>
+  </tr>
+  <tr>
+    <td>Case 1: HTTP/1 thread</td>
+    <td><img src="Scaled1.png" alt="Graph Results Screenshot Case 1" style="width:304px;height:228px;"></td>
+    <td>124</td>
+    <td>13.16</td>
+    <td>13.08</td>
+    <td>Similar to single verion due to lack of number of data.</td>
+  </tr>
+  <tr>
+    <td>Case 2: HTTP/10 threads</td>
+    <td><img src="Scaled2.png" alt="Graph Results Screenshot Case 2" style="width:304px;height:228px;"></td>
+    <td>124</td>
+    <td>26.39</td>
+    <td>26.32</td>
+    <td>Performed better than single server, owing to seperating work load to different servers</td>
+  </tr>
+  <tr>
+    <td>Case 3: HTTP/10 threads/No prepared statements</td>
+    <td><img src="Scaled3.png" alt="Graph Results Screenshot Case 4" style="width:304px;height:228px;"></td>
+    <td>108</td>
+    <td>17.97</td>
+    <td>17.92</td>
+    <td>Same as single instance version, perparestatement did not help that much.</td>
+  </tr>
+  <tr>
+    <td>Case 4: HTTP/10 threads/No connection pooling</td>
+    <td><img src="Scaled4.png" alt="Graph Results Screenshot Case 4" style="width:304px;height:228px;"></td>
+    <td>116</td>
+    <td>25.44</td>
+    <td>22.06</td>
+    <td>Much less than single instance, No pooling always makes difference between TS and TJ large</td>
+  </tr>
+
+</table> 
+
+</body>
+</html>

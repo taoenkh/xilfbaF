@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Movie Title Search Results"
+        android:textStyle="bold"
+        android:gravity="center_vertical|center_horizontal"
+        android:textSize="30dp"
+        android:layout_weight="0.06" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/titleQueryTextView" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/numberOfResultsTextView" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="29dp"
+        android:id="@+id/pageNumberTextView" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="580dp"
+        android:id="@+id/movieSearchResultLinearLayout"></LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Previous"
+            android:id="@+id/previousButton"
+            android:layout_weight="0.3" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search Page"
+            android:id="@+id/searchPageButton"
+            android:layout_weight="0.4"
+            android:onClick="searchPageOnClick"
+            android:minHeight="80dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:id="@+id/nextButton"
+            android:layout_weight="0.3" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+<meta charset="UTF-8">
+		<title>Fabflix</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- include jquery autocomplete JS  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.7/jquery.autocomplete.min.js"></script>
+		 <link rel="stylesheet" href="http://www.bootcss.com/p/buttons/css/buttons.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+		<script src = "./genre.js"></script>
+		
+		
+		<style>
+		#brow{
+			height:1000px;
+			
+		
+		}
+		#genrebrows{
+			float:left;
+			
+		}
+		#titlebrows{
+			float:right;
+		}
+		</style>
+		<link rel="stylesheet" href="css/style.css" type="text/css"  />
+		
+	</head>
+<body>
+	
+	<div id = "shell" align = "center">
+		 <span id = "chart"><a href ="/cs122b/shoppingcart?tobuy="></a></span>
+		<div id="header" align="left">
+        	<h1 id="logo"><a href="/cs122b"></a></h1>
+        	<br/>
+        	<br/>
+        	<br/>
+        	<br/>
+        	
+        </div>
+			<div id = "login" align = "center">
+				
+				<h2>Fabflix Search</h2>
+				<hr>
+				<h3>Search</h3>
+				<div id = "fsearch">
+					<input type="text" name="hero" id="autocomplete"/>
+					<INPUT id = "searchbutton" TYPE="SUBMIT" VALUE="Search" class = "button button-pill button-primary">
+					<script src = "./autocomplete.js"></script>
+				</div>
+				<div id = "button-container">
+				
+				<br>
+				<button id="filter-button" class="button button-pill button-primary">Advanced</button>
+				</div>
+				<hr>
+				
+				<div id = "hidden-detail" class = "hidden">
+				<h3>Advanced Search</h3>
+				<FORM id = "searchform"  action ="./main" METHOD="GET">
+				  <label>Title:</label> 
+				  <INPUT TYPE="TEXT" NAME="title" > <br/>
+				  <label>Year:</label>
+				   <INPUT TYPE="number" NAME="year" ><br />
+				   
+				   				  <label>Director:</label>
+				   <INPUT TYPE="Text" NAME="director" ><br />
+				   
+				   				  <label> Star Name:</label>
+				   <INPUT TYPE="Text" NAME="name" ><br />
+				   
+				  
+				   <INPUT TYPE="SUBMIT" VALUE="Search">
+				  
+				</FORM>
+				</div>
+				
+				
+			<div id = "brow">
+			<div id = "genrebrows" align = "center" ></div>
+			<div id = "titlebrows" align = "center"></div>
+			</div>
+		</div>
+		
+		
+	</div>
+	<div id = "here" style="background:white;"></div>
+	<!-- include our own JS file -->
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<!-- include our own JS file -->
+	
+	
+	<script>
+	var body = jQuery("#titlebrows");
+	body.append("<h3>Browse Movie by Title</h3>");
+	for(var i = 0;i<10; i++){
+		console.log("hi1");
+		var ht = "<a href = 'bytitle?title="+ i.toString()+"&param="+"'>";
+		ht+=i.toString();
+		ht+="</a><br/>";
+		console.log(ht);
+		body.append(ht);
+	}
+	for (var i = 65; i <= 90; i++) {
+		
+	    body.append("<a href = 'bytitle?title="+ String.fromCharCode(i)+"&param="+"'>" + String.fromCharCode(i) + '</a><br/>');
+	}
+	
+	</script>
+	
+	
+</body>
+</html>

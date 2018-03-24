@@ -1,0 +1,109 @@
+body{
+	background-image:url("images/loginbackground.jpg");
+	//background-image:url("images/background.jpg"); 
+	background-position: center;
+	font-family:"Times New Roman" ;
+	
+	
+}
+#autocomplete{
+	width:300px;
+}
+.hidden{
+  display: none;
+}
+.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
+.autocomplete-group { padding: 2px 5px; }
+.autocomplete-group strong { display: block; border-bottom: 1px solid #000; }
+
+h1 {text-align:center;color:grey;font-family:"Times New Roman";}
+
+table {
+       	left: 10%;
+        margin: 20px auto;
+        overflow-y: scroll;
+        position: static;
+        width: 80%;
+        opacity:0.9;}
+        		
+tr {background:white ;
+    border-bottom: 1px solid grey; 
+    margin-bottom: 5px; } 
+        		
+td { font-size: 16px; 
+     font-family: 'Times New Roman', sans-serif;  
+     padding: 20px; 
+     text-align: left; 
+     opacity:0.9;}
+td:hover{background: grey;}
+
+
+#out{
+
+	
+	margin:auto;
+	display:block;
+}
+
+
+
+#header{
+ 
+	background-color:rgb(31,31,31);
+	margin:0;
+	border:0;
+	height:80px;
+}
+#login{
+	width:1000px;
+	background-color:white;
+	opacity:0.9;
+	width:550; 
+}
+.loginrow{
+	font-family:"Times New Roman";
+}
+#shell {
+	height:300px;
+	width:100%; 
+	margin:0;
+	
+	
+}
+h1{
+	font-family:"Arial";
+	
+	font-weight:normal;
+}
+
+#chart a{
+	
+	background-image:url("images/shopping.jpg");
+	float:right;
+	width:80px;
+	height:75px;
+	background-repeat:no-repeat;
+	
+}
+#logo a{
+	float:left; 
+	width:155px; 
+	height:75px;
+	background-repeat:no-repeat;
+ 	background-image: url("images/fab.png") ;
+ 	background-size: 155px 75px;
+  	font-size: 10; 
+  	line-height: 200%; 
+  	text-indent: 000px;
+  	
+  }
+  
+  
+  #sorting{
+
+
+  	text-align:center;
+  }
