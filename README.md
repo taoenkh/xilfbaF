@@ -1,4 +1,4 @@
-# Fabflix
+# Fabflix, a shopping website (Full Stack Development)
 
 To run the website
 
